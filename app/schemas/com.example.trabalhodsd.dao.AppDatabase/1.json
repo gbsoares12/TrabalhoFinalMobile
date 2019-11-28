@@ -1,0 +1,58 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "ead2bd564ef38adb1e65334285e61d2b",
+    "entities": [
+      {
+        "tableName": "Tarefa",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id_tarefa` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `titulo` TEXT, `data` TEXT, `data_inicio` TEXT, `data_fim` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id_tarefa",
+            "columnName": "id_tarefa",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "titulo",
+            "columnName": "titulo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "data",
+            "columnName": "data",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "data_inicio",
+            "columnName": "data_inicio",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "data_fim",
+            "columnName": "data_fim",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id_tarefa"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ead2bd564ef38adb1e65334285e61d2b')"
+    ]
+  }
+}

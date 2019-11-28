@@ -39,10 +39,10 @@ public class SaveData extends SQLiteOpenHelper {
     public boolean addData(Tarefa tarefa) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL2, tarefa.getNome());
+        contentValues.put(COL2, tarefa.getTitulo());
         contentValues.put(COL3, tarefa.getData());
 
-        Log.d("AdicionandoDados", "addData: Adding " + tarefa.getNome() + " to " + TABLE_NAME);
+        Log.d("AdicionandoDados", "addData: Adding " + tarefa.getTitulo() + " to " + TABLE_NAME);
 
         long result = db.insert(TABLE_NAME, null, contentValues);
 

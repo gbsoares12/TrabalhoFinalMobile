@@ -12,7 +12,7 @@
     <ImageView
         android:id="@+id/moodle_img"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="74dp"
         android:contentDescription="moodle_logo"
         android:src="@mipmap/logo_moodle_833x598"
         app:srcCompat="@mipmap/logo_moodle_833x598" />
@@ -25,14 +25,14 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="32dp"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textViewBemVindo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="100dp"
+                android:layout_marginLeft="165dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/audiowide"
                 android:text="Bem Vindo " />
@@ -41,10 +41,19 @@
                 android:id="@+id/textViewNomeUser"
                 android:layout_width="wrap_content"
                 android:layout_height="35dp"
-                android:layout_marginRight="70dp"
+                android:layout_marginLeft="145dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/audiowide"
                 android:text=" " />
+
+            <ImageButton
+                android:id="@+id/bt_logout"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="25dp"
+                android:minHeight="100px"
+                android:src="@drawable/icon_logout"></ImageButton>
         </LinearLayout>
 
         <LinearLayout
@@ -55,6 +64,7 @@
             android:padding="10px">
 
             <EditText
+                android:id="@+id/et_urlCalendario"
                 android:layout_width="wrap_content"
                 android:layout_height="100px"
                 android:layout_gravity="center_horizontal"
@@ -63,6 +73,7 @@
                 android:textSize="44px"/>
 
             <Button
+                android:id="@+id/bt_import"
                 android:layout_width="250px"
                 android:layout_height="120px"
                 android:layout_gravity="center_horizontal"
@@ -81,12 +92,4 @@
         android:name="com.example.trabalhodsd.FragmentCalendar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="100px"
-        android:layout_marginTop="25dp"
-        android:layout_gravity="end"
-        android:src="@drawable/icon_logout"
-        android:id="@+id/bt_logout">
-    </ImageButton>
 </LinearLayout>
