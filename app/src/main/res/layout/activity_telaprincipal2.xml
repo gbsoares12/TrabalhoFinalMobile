@@ -30,9 +30,9 @@
 
             <TextView
                 android:id="@+id/textViewBemVindo"
-                android:layout_width="18dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="130dp"
+                android:layout_marginLeft="100dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/audiowide"
                 android:text="Bem Vindo " />
@@ -44,29 +44,30 @@
                 android:layout_marginRight="70dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/audiowide"
-                android:text="usuario" />
+                android:text=" " />
         </LinearLayout>
 
         <LinearLayout
            android:layout_width="match_parent"
            android:layout_height="match_parent"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_margin="10dp"
             android:padding="10px">
 
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="100px"
-                android:layout_margin="10dp"
+                android:layout_gravity="center_horizontal"
                 android:hint="URL do calendário a ser importado!"
                 android:inputType="textLongMessage"
-                android:textSize="38px"/>
+                android:textSize="44px"/>
 
             <Button
                 android:layout_width="250px"
-                android:layout_height="100px"
+                android:layout_height="120px"
+                android:layout_gravity="center_horizontal"
                 android:text="Importar"
-                android:textSize="12sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 style="@style/Widget.AppCompat.Button.Colored">
 
@@ -80,4 +81,12 @@
         android:name="com.example.trabalhodsd.FragmentCalendar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="100px"
+        android:layout_marginTop="25dp"
+        android:layout_gravity="end"
+        android:src="@drawable/icon_logout"
+        android:id="@+id/bt_logout">
+    </ImageButton>
 </LinearLayout>

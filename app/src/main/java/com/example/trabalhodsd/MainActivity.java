@@ -51,8 +51,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 //                mAuth.signOut();
-                signIn();
-
+        signIn();
             }
         });
     }
@@ -65,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
             Intent t = new Intent(MainActivity.this, Telaprincipal.class);
             finish();
             startActivity(t);
+
         }
     }
 
@@ -118,8 +118,9 @@ public class MainActivity extends AppCompatActivity {
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
+        System.out.println("aqui");
     }
-    // [END signin]
+
 
     private void signOut() {
         // Firebase sign out
