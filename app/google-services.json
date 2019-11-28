@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "637539902342",
+    "firebase_url": "https://facul-remember.firebaseio.com",
+    "project_id": "facul-remember",
+    "storage_bucket": "facul-remember.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:637539902342:android:be205c538b86147d61c207",
+        "android_client_info": {
+          "package_name": "com.example.trabalhodsd"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "637539902342-81n6ljl0t6m4a1sotsl12r1ifphllrjk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.trabalhodsd",
+            "certificate_hash": "487de6a330860aec0090deaaa333ccb88dd58c78"
+          }
+        },
+        {
+          "client_id": "637539902342-2ub3t5si5j41q4666lar8vgeo12n1m54.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.trabalhodsd",
+            "certificate_hash": "b3e32f2110ae969b1bb79b4309b0f774a1a7f3e8"
+          }
+        },
+        {
+          "client_id": "637539902342-odjpb4qq02779mvavorvaj57a8q0kuet.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpiTmn54kp8vLc3F1-hdnIyMAlVi6aYUE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "637539902342-bj6gmm92knsj6e0dpqlrj7gm4nv1sqv7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
