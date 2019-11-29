@@ -8,88 +8,87 @@
     android:orientation="vertical"
     android:background="#FFF">
 
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/moodle_img"
         android:layout_width="match_parent"
-        android:layout_height="74dp"
+        android:layout_height="100dp"
         android:contentDescription="moodle_logo"
         android:src="@mipmap/logo_moodle_833x598"
         app:srcCompat="@mipmap/logo_moodle_833x598" />
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/icon_logout"
+        android:id="@+id/bt_logout">
+    </ImageButton>
+</RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="15dp">
+        android:layout_marginTop="40dp"
+        android:gravity="center">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textViewBemVindo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="165dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/audiowide"
                 android:text="Bem Vindo " />
 
-            <TextView
-                android:id="@+id/textViewNomeUser"
-                android:layout_width="wrap_content"
-                android:layout_height="35dp"
-                android:layout_marginLeft="145dp"
-                android:layout_weight="1"
-                android:fontFamily="@font/audiowide"
-                android:text=" " />
-
-            <ImageButton
-                android:id="@+id/bt_logout"
-                android:layout_width="wrap_content"
-                android:layout_height="18dp"
-                android:layout_gravity="end"
-                android:layout_marginTop="25dp"
-                android:minHeight="100px"
-                android:src="@drawable/icon_logout"></ImageButton>
-        </LinearLayout>
 
         <LinearLayout
            android:layout_width="match_parent"
            android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_margin="10dp"
-            android:padding="10px">
+            android:padding="10px"
+            android:layout_gravity="center">
 
             <EditText
-                android:id="@+id/et_urlCalendario"
                 android:layout_width="wrap_content"
                 android:layout_height="100px"
                 android:layout_gravity="center_horizontal"
                 android:hint="URL do calendário a ser importado!"
                 android:inputType="textLongMessage"
-                android:textSize="44px"/>
+                android:textSize="36px"
+                android:id="@+id/et_urlCalendario"
+                android:layout_marginBottom="10dp"/>
 
             <Button
-                android:id="@+id/bt_import"
-                android:layout_width="250px"
+                android:layout_width="300px"
                 android:layout_height="120px"
                 android:layout_gravity="center_horizontal"
+                android:id="@+id/bt_import"
                 android:text="Importar"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                style="@style/Widget.AppCompat.Button.Colored">
-
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_marginBottom="10dp">
             </Button>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <com.example.trabalhodsd.CustomCalendar
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/custom_calendar_view">
+
+                </com.example.trabalhodsd.CustomCalendar>
+            </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>
-
-    <fragment
-        android:id="@+id/fragment"
-        android:name="com.example.trabalhodsd.FragmentCalendar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 </LinearLayout>

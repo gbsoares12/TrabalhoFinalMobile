@@ -26,6 +26,7 @@ import com.google.firebase.auth.FirebaseUser;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import okhttp3.RequestBody;
@@ -36,28 +37,32 @@ import retrofit2.Response;
 
 public class Telaprincipal extends AppCompatActivity {
 
-    CalendarView mCalendar;
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
-    private TextView mUserNameText;
+    private TextView textViewBemVindo;
     private ImageButton mLogoutButton;
     private Button mImportButton;
     private List<Tarefa> listaTarefasSQLITE;
+    private Button mClearButton;
+    private EditText mLink;
+    private CustomCalendar customCalendar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_telaprincipal2);
+        customCalendar  = findViewById(R.id.custom_calendar_view);
 
 //      PEGA AS TAREFAS QUE JÁ ESTÃO SALVAS NO BANCO DE DADOS LOCAL
         listaTarefasSQLITE = carregarTarefas();
 
-
+        mLink = findViewById(R.id.et_urlCalendario);
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
-        mUserNameText = findViewById(R.id.textViewNomeUser);
-        mUserNameText.setText(currentUser.getDisplayName());
+        textViewBemVindo = findViewById(R.id.textViewBemVindo);
+        textViewBemVindo.setText("Bem Vindo " +currentUser.getDisplayName());
         mLogoutButton = findViewById(R.id.bt_logout);
+
         mLogoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,12 +74,12 @@ public class Telaprincipal extends AppCompatActivity {
 
             }
         });
+
         mImportButton = findViewById(R.id.bt_import);
         mImportButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText txt = findViewById(R.id.et_urlCalendario);
-                String urlCalendario = txt.getText().toString();
+                String urlCalendario = mLink.getText().toString();
 
                 Call<List<Tarefa>> call = new RetrofitInitializer().getTarefas().postJson(
                         new RequestTarefa(urlCalendario));
@@ -87,7 +92,9 @@ public class Telaprincipal extends AppCompatActivity {
                         for (int i = 0; i < response.body().size(); i++) {
                             registrarTarefas(response.body().get(i));
                         }
-
+                        Intent t = new Intent(Telaprincipal.this, CustomCalendar.class);
+                        finish();
+                        startActivity(t);
                     }
 
                     @Override
@@ -97,15 +104,6 @@ public class Telaprincipal extends AppCompatActivity {
                 });
             }
         });
-        mCalendar = findViewById(R.id.calendarView);
-        mCalendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-            @Override
-            public void onSelectedDayChange(@NonNull CalendarView calendarView, int ano, int mes, int dia) {
-                Toast.makeText(Telaprincipal.this, "Data selecionada: " + dia + "/" + (mes + 1) + "/" + ano, Toast.LENGTH_SHORT).show();
-            }
-        });
-        mCalendar.setDate(System.currentTimeMillis());
-        Toast.makeText(this, "Bem vindo " + currentUser.getDisplayName() + "!", Toast.LENGTH_SHORT).show();
 
 
         for (int i = 0; i < listaTarefasSQLITE.size(); i++) {
