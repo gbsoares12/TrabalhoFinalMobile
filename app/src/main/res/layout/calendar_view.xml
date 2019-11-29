@@ -3,124 +3,117 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#f1f1f1"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#5A6EDF"
         android:orientation="horizontal"
-        android:paddingBottom="8dp"
-        android:paddingTop="8dp"
-        android:background="@color/colorPrimary">
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp">
 
         <ImageButton
+            android:id="@+id/bt_back"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:id="@+id/bt_back"
-            android:background="@drawable/iconfinder_previous_308957"
-            android:layout_margin="10dp">
-        </ImageButton>
+            android:layout_margin="5dp"
+            android:background="@drawable/iconfinder_previous_308957"></ImageButton>
+
         <TextView
+            android:id="@+id/data_atual"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_weight="3"
             android:gravity="center"
-            android:layout_marginTop="4dp"
             android:text="Data atual"
             android:textColor="#000"
-            android:textStyle="bold"
             android:textSize="24sp"
-            android:layout_weight="3"
-            android:id="@+id/data_atual">
-        </TextView>
+            android:textStyle="bold"></TextView>
+
         <ImageButton
+            android:id="@+id/bt_next"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:id="@+id/bt_next"
-            android:background="@drawable/iconfinder_next_308956"
-            android:layout_margin="10dp">
-        </ImageButton>
+            android:layout_margin="5dp"
+            android:background="@drawable/iconfinder_next_308956"></ImageButton>
     </LinearLayout>
 
     <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-        android:paddingTop="4dp"
         android:paddingBottom="4dp"
-        android:background="#fff">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="DOM"
-        android:background="#ff4500"
-        android:layout_marginTop="4dp"
-        android:layout_weight="1"
-        android:textStyle="bold">
-    </TextView>
+        android:background="#f1f1f1">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#9BCFF3"
+            android:gravity="center"
+            android:text="DOM"
+            android:textStyle="bold"></TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#A9E5F1"
             android:gravity="center"
             android:text="SEG"
-            android:background="#cf8a02"
-            android:layout_marginTop="4dp"
-            android:layout_weight="1"
-            android:textStyle="bold">
-        </TextView>
+            android:textStyle="bold"></TextView>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#A9E5F1"
             android:gravity="center"
             android:text="TER"
-            android:background="#cf8a02"
-            android:layout_marginTop="4dp"
-            android:layout_weight="1"
-            android:textStyle="bold">
-        </TextView>
+            android:textStyle="bold"></TextView>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#A9E5F1"
             android:gravity="center"
             android:text="QUA"
-            android:background="#cf8a02"
-            android:layout_marginTop="4dp"
-            android:layout_weight="1"
-            android:textStyle="bold">
-        </TextView>
+            android:textStyle="bold"></TextView>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#A9E5F1"
             android:gravity="center"
             android:text="QUI"
-            android:background="#cf8a02"
-            android:layout_marginTop="4dp"
-            android:layout_weight="1"
-            android:textStyle="bold">
-        </TextView>
+            android:textStyle="bold"></TextView>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#A9E5F1"
             android:gravity="center"
             android:text="SEX"
-            android:background="#cf8a02"
-            android:layout_marginTop="4dp"
-            android:layout_weight="1"
-            android:textStyle="bold">
-        </TextView>
+            android:textStyle="bold"></TextView>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#9BCFF3"
             android:gravity="center"
             android:text="SAB"
-            android:background="#ff4500"
-            android:layout_marginTop="4dp"
-            android:layout_weight="1"
-            android:textStyle="bold">
-        </TextView>
+            android:textStyle="bold"></TextView>
     </LinearLayout>
     <GridView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#f1f1f1"
         android:id="@+id/grid_view"
         android:numColumns="7">
 
