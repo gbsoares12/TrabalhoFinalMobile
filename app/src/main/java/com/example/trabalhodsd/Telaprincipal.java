@@ -87,14 +87,12 @@ public class Telaprincipal extends AppCompatActivity {
                 call.enqueue(new Callback<List<Tarefa>>() {
                     @Override
                     public void onResponse(Call<List<Tarefa>> call, Response<List<Tarefa>> response) {
-
+                        System.out.println("BEM SUCEIDO");
                         // SE A REQUISIÇÃO FOR BEM SUCEDIDA SALVA AS TAREFAS NO SQLITE
                         for (int i = 0; i < response.body().size(); i++) {
                             registrarTarefas(response.body().get(i));
                         }
-                        Intent t = new Intent(Telaprincipal.this, CustomCalendar.class);
-                        finish();
-                        startActivity(t);
+                        customCalendar.setUpCalendario();
                     }
 
                     @Override
@@ -106,9 +104,6 @@ public class Telaprincipal extends AppCompatActivity {
         });
 
 
-        for (int i = 0; i < listaTarefasSQLITE.size(); i++) {
-            Log.d("TESTE", "\n\n @@@@@@@@@@@@@@@@@@ TAREFAS SALVAS NO SQLITE: " + listaTarefasSQLITE.get(i).toString() + "\n\n");
-        }
     }
 
 

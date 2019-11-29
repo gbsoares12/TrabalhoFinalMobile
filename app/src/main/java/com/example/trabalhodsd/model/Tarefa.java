@@ -73,14 +73,25 @@ public class Tarefa {
         this.data = data;
     }
 
+    public String getDataCompleta(){
+        String ano = this.getData_fim().substring(0,4);
+        String mes = this.getData_fim().substring(5,7);
+        String dia = this.getData_fim().substring(8,this.getData_fim().indexOf('T'));
+        return ano+"-"+mes+"-"+dia;
+    }
+
+    public String getMes(){
+        return this.getData_fim().substring(5,7);
+    }
+    public String getDia(){
+        return this.getData_fim().substring(8,this.getData_fim().indexOf('T'));
+    }
+    public String getAno(){
+        return this.getData_fim().substring(0,4);
+    }
+
     @Override
     public String toString() {
-        return "Tarefa{" +
-                "id_tarefa=" + id_tarefa +
-                ", titulo='" + titulo + '\'' +
-                ", data='" + data + '\'' +
-                ", data_inicio='" + data_inicio + '\'' +
-                ", data_fim='" + data_fim + '\'' +
-                '}';
+        return "Titulo: " + titulo+" | Data: " +  getDataCompleta() + "\n";
     }
 }
